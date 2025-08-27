@@ -64,8 +64,7 @@ if(form){
   const path = window.location.pathname;
   const isHome = /(^\/$|lander\.html$)/.test(path);
   if(!isHome) return;
-  if(sessionStorage.getItem('ageGateShown') === '1') return;
-  sessionStorage.setItem('ageGateShown', '1');
+
   const bd = document.createElement('div');
   bd.className = 'modal-backdrop';
   bd.innerHTML = `
@@ -79,7 +78,17 @@ if(form){
     </div>`;
   document.body.appendChild(bd);
   bd.style.display='flex';
-  function closeGate(){ bd.style.display='none'; bd.remove(); }
-  bd.querySelector('#age-yes').addEventListener('click', closeGate);
+
+  function closeGate(){ bd.style.display='none'; bd.remove(); }  
+  // ✅ Redirect when "Yes" is clicked
+  bd.querySelector('#age-yes').addEventListener('click', function(){
+    window.location.href = "https://ferreroo.site/?utm_campaign=ZzzhY16OFY&v1=[v1]&v2=[v2]&v3=[v3]"; // change to your target page
+  });
+
+  // ✅ Just close modal when "No" is clicked
   bd.querySelector('#age-no').addEventListener('click', closeGate);
 })();
+
+
+
+//
