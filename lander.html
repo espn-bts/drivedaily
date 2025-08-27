@@ -13,9 +13,7 @@
 
 <style>
   /* Page layout: sticky footer */
-  html, body {
-    height: 100%;
-  }
+  html, body { height: 100%; }
   body {
     margin: 0;
     display: flex;
@@ -26,23 +24,33 @@
     background: #0b1220;
   }
 
-  /* Hero fills remaining height so footer sits at bottom */
+  /* Hero takes remaining space so footer sits at bottom */
   .hero {
-    flex: 1; /* take up all free space */
+    position: relative;
+    flex: 1;
+    min-height: 80vh;
+    background-color: #1a1f2e; /* shows behind image “letterbox” */
+    overflow: hidden;
+  }
+
+  /* Make the image fill the hero box while keeping full image visible */
+  .hero img {
+    position: absolute;
+    inset: 0;              /* top:0 right:0 bottom:0 left:0 */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* full image, no cropping */
+    display: block;
+  }
+
+  /* Centered overlay content */
+  .hero .overlay {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-
-    /* Show the whole image on all screens */
-    background-image: url('https://raw.githubusercontent.com/worrier-tdo/myb/refs/heads/main/esd.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;        /* <-- full image always visible */
-    background-color: #1a1f2e;       /* letterbox fill color around image */
-
-    /* optional min height so it doesn’t collapse on very small viewports */
-    min-height: 80vh;
     padding: 4rem 1rem;
   }
 
@@ -59,6 +67,7 @@
     font-weight: 600;
   }
 
+  /* Footer */
   .footer {
     background: #0b1220;
     color: #e5e7eb;
@@ -95,18 +104,20 @@
 </head>
 
 <body>
-  <!-- (nav removed by you; keep commented if not needed) -->
-<header class="hero">
-  <img src="https://raw.githubusercontent.com/worrier-tdo/myb/refs/heads/main/esd.png" 
-       alt="Hero background" 
-       style="width:100%; height:auto; display:block; object-fit:contain;">
-  <div class="overlay">
-    <h1>Welcome (18+ route)</h1>
-    <p>Placeholder page for your monetization or content flow. Update later as needed.</p>
-    <a class="btn" href="index.html">Back to site</a>
-  </div>
-</header>
+  <!-- (nav commented out per your file) -->
 
+  <header class="hero">
+    <img
+      src="https://raw.githubusercontent.com/worrier-tdo/myb/refs/heads/main/esd.png"
+      alt="Hero background">
+    <div class="overlay">
+      <div>
+        <h1>Welcome (18+ route)</h1>
+        <p>Placeholder page for your monetization or content flow. Update later as needed.</p>
+        <a class="btn" href="index.html">Back to site</a>
+      </div>
+    </div>
+  </header>
 
   <footer class="footer">
     <div class="container">
