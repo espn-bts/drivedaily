@@ -10,67 +10,120 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css" />
+
+<style>
+  /* Page layout: sticky footer */
+  html, body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #0b1220;
+  }
+
+  /* Hero fills remaining height so footer sits at bottom */
+  .hero {
+    flex: 1; /* take up all free space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* Show the whole image on all screens */
+    background-image: url('https://raw.githubusercontent.com/worrier-tdo/myb/refs/heads/main/esd.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;        /* <-- full image always visible */
+    background-color: #1a1f2e;       /* letterbox fill color around image */
+
+    /* optional min height so it doesn’t collapse on very small viewports */
+    min-height: 80vh;
+    padding: 4rem 1rem;
+  }
+
+  .hero h1 { margin: 0 0 .5rem; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); }
+  .hero p  { margin: 0 0 1.25rem; opacity: .9; }
+
+  .btn {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: .5rem;
+    background: #38bdf8;
+    color: #0b1220;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .footer {
+    background: #0b1220;
+    color: #e5e7eb;
+    border-top: 1px solid #1f2937;
+  }
+  .footer .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer nav {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .footer a {
+    color: #38bdf8;
+    text-decoration: none;
+  }
+  .badge {
+    display: inline-block;
+    padding: .25rem .5rem;
+    border-radius: 999px;
+    background: #1f2937;
+    color: #e5e7eb;
+    font-size: .8rem;
+  }
+</style>
 </head>
+
 <body>
-<!-- <nav class="nav">
-  <div class="container nav-inner">
-    <a class="logo" href="index.html" aria-label="Home">
-      <img src="assets/img/logo.svg" alt="NovaArcade icon"><span>NovaArcade</span>
-    </a>
-    <div class="menu" data-nav-menu>
-      <a href="index.html" >Home</a>
-      <a href="game.html" >Play Game</a>
-      <a href="leaderboard.html" >Leaderboard</a>
-      <a href="about.html" >About</a>
-      <a href="blog.html" >Blog</a>
-      <a href="faq.html" >FAQ</a>
-      <a href="privacy.html" >Privacy</a>
-      <a href="terms.html" >Terms</a>
-      <a href="#contact">Contact</a>
+  <!-- (nav removed by you; keep commented if not needed) -->
+
+  <header class="hero">
+    <div class="container">
+      <h1>Welcome (18+ route)</h1>
+      <p>Placeholder page for your monetization or content flow. Update later as needed.</p>
+      <a class="btn" href="index.html">Back to site</a>
     </div>
-    <div class="right">
-      <a class="btn ghost" data-nav-toggle>Menu</a>
-      <a class="btn" href="game.html">Play</a>
+  </header>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© 2025 NovaArcade. All rights reserved.</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <span class="badge">Responsive • Age-gate</span>
+      </div>
+      <nav>
+        <a href="privacy.html">Privacy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="community-guidelines.html">Community Guidelines</a>
+        <a href="dmca.html">DMCA</a>
+        <a href="faq.html">FAQ</a>
+        <a href="sitemap.html">Sitemap</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-  </div>
-</nav> -->
+  </footer>
 
-<header class="hero" style="
-  background: url('https://raw.githubusercontent.com/worrier-tdo/myb/refs/heads/main/esd.png') no-repeat center center/cover;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-">
-  <div class="container" style="text-align:center;color:white">
-    <h1>Welcome (18+ route)</h1>
-    <p>Placeholder page for your monetization or content flow. Update later as needed.</p>
-    <a class="btn" href="index.html">Back to site</a>
-  </div>
-</header>
-
-
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-<footer class="footer">
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <div>© 2025 NovaArcade. All rights reserved.</div>
-    <div style="display:flex;gap:12px;align-items:center">
-      <span class="badge">Responsive • Age-gate</span>
-    </div>
-    <nav style="display:flex;gap:16px;flex-wrap:wrap">
-      <a href="privacy.html">Privacy</a>
-      <a href="cookie-policy.html">Cookie Policy</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="community-guidelines.html">Community Guidelines</a>
-      <a href="dmca.html">DMCA</a>
-      <a href="faq.html">FAQ</a>
-      <a href="sitemap.html">Sitemap</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</footer>
-</body>
-</html>
-
